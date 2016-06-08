@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
+<meta name="keywords" content="{{page.tags}}{% if page.tags %}, {% endif %} {{page.keywords}}">
+<title>{% if page.homepage == true %} {{site.homepage_title}} {% elsif page.title %}{{ page.title }}{% endif %}  | {{ site.site_title }}</title>
+<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/global.css" media="screen">
+{% if page.layout == "doc" or layout == "doc" %}
+  <link rel="stylesheet" type="text/css" href="../css/syntax.css">
+  <script type="text/javascript" src="../js/jquery.navgoco.min.js"></script>
+  <script type="text/javascript" src="../js/anchor.min.js"></script>
+  <script type="text/javascript" src="../js/toc.min.js"></script>
+  <script type="text/javascript" src="../js/customscripts.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+{% else %}
+  <link rel="stylesheet" type="text/css" href="../css/fcslideshow.min.css" media="screen">
+{% endif %}
+<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->

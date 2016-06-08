@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+  <head>
+    {% assign layout = "doc" %}
+    {% include head.html %}
+    {% if page.datatable == true %}
+      <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.5/css/jquery.dataTables.css">
+      <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.js"></script>
+      <script type="text/javascript">
+        $(document).ready(function(){
+          $('table.datatable').DataTable( {
+            paging: false,
+            stateSave: true
+          });
+          $('[data-toggle="tooltip"]').tooltip();
+        });
+        </script>
+      </script>
+    {% endif %}
+  </head>
+  <body>
+    {% include topnav.html topnav=site.data.topnav %}
+      <!-- Page Content -->
+      <div id="doc">
+        <div class="row">
+          <div class="doc-sidebar">
+            {% include sidebar.html %}
+          </div>
+          <!-- Content Column -->
+          <div class="doc-content">
+            {% comment %}
+              {% include algolia.html %}
+            {% endcomment %}
+            {{content}}
+          </div><!-- /.row -->
+        </div>
+      </div>    <!-- /.container -->
+  </body>
+</html>

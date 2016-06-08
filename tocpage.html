@@ -1,0 +1,41 @@
+---
+type: frontmatter
+search: exclude
+---
+
+<!-- new page -->
+<div id="navig">
+    <h1>Table of Contents</h1>
+    {% include custom/conditions.html %}
+
+    <ul id="mysidebar" class="nav">
+      {% for entry in sidebar %}
+        {% for subcategory in entry.subcategories %}
+          {% if subcategory.version contains version and subcategory.output contains "pdf" and subcategory.type != "frontmatter" %}
+            <li class="sectionHead">{{ subcategory.title }}
+              <ul>
+                {% for item in subcategory.items %}
+                  {% if item.version contains version and item.output contains "pdf" and item.type != "frontmatter"%}
+                    <li>
+                      <a href="{{item.url | prepend: site.baseurl}}">{{item.title}}</a>
+                      {% if item.thirdlevel %}
+                        <ul>
+                          {% for thirdlevel in item.thirdlevel %}
+                            {% if thirdlevel.version contains version and thirdlevel.output contains "pdf" and thirdlevel.type != "frontmatter" %}
+                              <li>
+                                <a href="{{thirdlevel.url | prepend: site.baseurl}}">{{ thirdlevel.title }}</a>
+                              </li>
+                            {% endif %}
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </li>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </ul>
+</div>

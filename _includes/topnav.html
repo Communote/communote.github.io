@@ -1,0 +1,21 @@
+<div id="top-section">
+  <header id="header">
+      <img class="communote-logo" src="/images/logo_communote.png" alt="Communote">
+      <a id="github-ribbon" href="https://github.com/communote"><img src="/images/ribbon.png" alt="Visit us on GitHub"></a>
+  </header>
+
+
+  <nav id="main-navigation">
+    <ul>
+      {% for entry in site.data.topnav %}
+        {% if "home" == entry.type %}
+          <li class="{{entry.type}}{% if page.url == entry.url %} active">{% else %}">{% endif %}
+          <a href="{{entry.url}}"><span class="ion ion-ios-home"></span><span class="sr-only">(current)</span></a></li>
+        {% else %}
+          <li class="{{entry.type}}{% if (page.url contains entry.type) or (page.url contains entry.url) %} active">{% else %}">{% endif %}
+          <a href="{{entry.url}}">{{entry.title}}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+</div>
