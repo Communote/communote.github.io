@@ -7,7 +7,7 @@ last_updated: March 10, 2016
 If you like to build the core than you have to clone the project via Git first:
 
 ```
-git clone https://github.com/communote/communote.git
+git clone https://github.com/Communote/communote-server.git
 ```
 
 When the cloned Communote is in place you can use maven to build it with a simple ```mvn```.

@@ -21,7 +21,7 @@ Available for Linux and Windows.With this package you can start Communote withou
 
 Using the installation by a WAR-File the complete configuration must be done by hand.  The installation by WAR-File should only be done by experienced users.
 
-To download the various packages or upgrade to a new version, visit the download area of our github project: http://communote.github.io/download/communote.war
+To download the various packages or upgrade to a new version, visit the download area of our github project: https://github.com/Communote/communote-server/releases
 
 ## 2.2 Create Databases
 
