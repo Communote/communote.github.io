@@ -6,7 +6,7 @@ output: web
 homepage_title: Communote
 site_title: Communote
 project_folder: doc
-github_editme_path: Communote/communote.github.io
+github_editme_path: Communote/communote.github.io/blob/master
 disqus_shortname: communote-doc
 
 pdf_file_name: Communote-Documentation.pdf
