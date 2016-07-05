@@ -3,6 +3,8 @@ layout: doc
 title: Introduction
 tags: [getting_started]
 audience: developers, admins, users
+redirect_from:
+  - /doc/
 ---
 
 # Introduction
