@@ -106,6 +106,7 @@ GRANT "RESOURCE" TO "COMMUNOTE"
 ```
 
 ## 2.3 Installation
+
 ### 2.3.1 Preparations
 
 Before Communote can be installed your server has to be prepared:
@@ -208,7 +209,7 @@ Start your browser for completing the installation and go to the homepage of you
 
 Now you should see the start screen of the web installer:
 
-![](images/dev/installer_start.png)
+![](images/install/web_installer.png)
 
 _Figure "Communote Installer Startpage"_
 
