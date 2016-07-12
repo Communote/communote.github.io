@@ -134,7 +134,7 @@ To install Communote from the Linux or Windows installation package follow the i
 1. Unzip or untar the downloaded package into an arbitrary directory. This directory now contains among others a directory named 'communote' which you copy into your preferred installation directory (`COMMUNOTE_INSTALL_DIR`).
 2. When not using a PostgreSQL database copy the previously downloaded JDBC driver for your database to `COMMUNOTE_INSTALL_DIR/communote/lib`.
 3. Configuration:
-   1. Define the Communote configuration directory. Edit the file `COMMUNOTE_INSTALL_DIR/communote/conf/context.xml` and add the following entry in between the elements `<context>` and `</context>`:
+  1. Define the Communote configuration directory. Edit the file `COMMUNOTE_INSTALL_DIR/communote/conf/context.xml` and add the following entry in between the elements `<context>` and `</context>`:
 
       ```xml
       <Environment name="communote.config.dir" type="java.lang.String" value="absolute path to configuration directory" />
@@ -142,9 +142,9 @@ To install Communote from the Linux or Windows installation package follow the i
 
       You can use the prepared configuration directory `COMMUNOTE_INSTALL_DIR/communote/conf/communote`
 
-   2. Configure the data directory which Communote will use for storing application data. This directory will also be used as the default location for saving attachments.
-      1. Create a file called `startup.properties` in the Communote configuration directory.
-      2. Add the absolute path to the data directory to the `startup.properties` file as shown in the following example. You should not select a directory within `COMMUNOTE_INSTALL_DIR/communote/communote/` because this would allow users to access the content of that directory directly from their web browsers.
+  2. Configure the data directory which Communote will use for storing application data. This directory will also be used as the default location for saving attachments.
+    1. Create a file called `startup.properties` in the Communote configuration directory.
+    2. Add the absolute path to the data directory to the `startup.properties` file as shown in the following example. You should not select a directory within `COMMUNOTE_INSTALL_DIR/communote/communote/` because this would allow users to access the content of that directory directly from their web browsers.
 
         ```ini
         communote.data.dir=C\:/Communote/communote-data
