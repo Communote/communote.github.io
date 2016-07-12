@@ -118,11 +118,11 @@ Before Communote can be installed your server has to be prepared:
    ```
 
 2. Download a JDBC driver for your database management system. The installation of the driver, which is a JAR file, will be described in the individual installation sections.
-  * PostgreSQL: the JDBC driver is available at [https://jdbc.postgresql.org/download.html](https://jdbc.postgresql.org/download.html). You should typically pick the current JDBC42 driver but please also read the documentation on that page.
-    * _Note: if you are using the Linux or Windows installation package this step can be skipped because the driver is already contained_
-  * MySQL: the JDBC driver can be downloaded from [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/). You need a driver with version 5.1.x (e.g. 5.1.39).
-  * Microsoft SQL-Server: the JDBC driver is available at [http://jtds.sourceforge.net/](http://jtds.sourceforge.net/).
-  * Oracle: a suitable JDBC Thin driver can be downloaded from [http://www.oracle.com/technetwork/indexes/downloads/index.html](http://www.oracle.com/technetwork/indexes/downloads/index.html). You should take the ojdbc6.jar.
+   * PostgreSQL: the JDBC driver is available at [https://jdbc.postgresql.org/download.html](https://jdbc.postgresql.org/download.html). You should typically pick the current JDBC42 driver but please also read the documentation on that page.
+     * _Note: if you are using the Linux or Windows installation package this step can be skipped because the driver is already contained_
+   * MySQL: the JDBC driver can be downloaded from [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/). You need a driver with version 5.1.x (e.g. 5.1.39).
+   * Microsoft SQL-Server: the JDBC driver is available at [http://jtds.sourceforge.net/](http://jtds.sourceforge.net/).
+   * Oracle: a suitable JDBC Thin driver can be downloaded from [http://www.oracle.com/technetwork/indexes/downloads/index.html](http://www.oracle.com/technetwork/indexes/downloads/index.html). You should take the ojdbc6.jar.
 3. Download the Communote package you want to install from [GitHub](https://github.com/Communote/communote-server/releases).
  
 Now you can install Communote by following the steps in section 2.3.2 if you selected a Windows or Linux installation package or the instructions of section 2.3.3 if you want to use the WAR file.
@@ -134,7 +134,7 @@ To install Communote from the Linux or Windows installation package follow the i
 1. Unzip or untar the downloaded package into an arbitrary directory. This directory now contains among others a directory named 'communote' which you copy into your preferred installation directory (`COMMUNOTE_INSTALL_DIR`).
 2. When not using a PostgreSQL database copy the previously downloaded JDBC driver for your database to `COMMUNOTE_INSTALL_DIR/communote/lib`.
 3. Configuration:
-  1. Define the Communote configuration directory. Edit the file `COMMUNOTE_INSTALL_DIR/communote/conf/context.xml` and add the following entry in between the elements `<context>` and `</context>`:
+   1. Define the Communote configuration directory. Edit the file `COMMUNOTE_INSTALL_DIR/communote/conf/context.xml` and add the following entry in between the elements `<context>` and `</context>`:
 
       ```xml
       <Environment name="communote.config.dir" type="java.lang.String" value="absolute path to configuration directory" />
@@ -142,15 +142,15 @@ To install Communote from the Linux or Windows installation package follow the i
 
       You can use the prepared configuration directory `COMMUNOTE_INSTALL_DIR/communote/conf/communote`
 
-  2. Configure the data directory which Communote will use for storing application data. This directory will also be used as the default location for saving attachments.
-    1. Create a file called `startup.properties` in the Communote configuration directory.
-    2. Add the absolute path to the data directory to the `startup.properties` file as shown in the following example. You should not select a directory within `COMMUNOTE_INSTALL_DIR/communote/communote/` because this would allow users to access the content of that directory directly from their web browsers.
+   2. Configure the data directory which Communote will use for storing application data. This directory will also be used as the default location for saving attachments.
+      1. Create a file called `startup.properties` in the Communote configuration directory.
+      2. Add the absolute path to the data directory to the `startup.properties` file as shown in the following example. You should not select a directory within `COMMUNOTE_INSTALL_DIR/communote/communote/` because this would allow users to access the content of that directory directly from their web browsers.
 
-        ```ini
-        communote.data.dir=C\:/Communote/communote-data
-        ```
+         ```ini
+         communote.data.dir=C\:/Communote/communote-data
+         ```
 
-        **Note for Windows**: The colon (':') has to be escaped with a backslash and all backslashes in the path have to be replaced by normal slashes as shown in the example.
+         **Note for Windows**: The colon (':') has to be escaped with a backslash and all backslashes in the path have to be replaced by normal slashes as shown in the example.
 4. Optional for Linux systems (recommended): Create or select a special user without root access that should be able to run Communote. This user needs to have read and write access to the data directory and should be the owner of the Communote installation directory.
 5. Now you are ready to start Communote. To do this, go to the directory `COMMUNOTE_INSTALL_DIR/communote/bin` and run Communote with `startup.bat` (Windows) or `startup.sh` (Linux, make sure to run the script as the correct user!).
 
@@ -163,43 +163,43 @@ To install Communote from WAR file follow the instructions below.
 1. Get and install the Apache Tomcat version mentioned in the [system requirements](install_requirements.html).
 2. Copy the downloaded JDBC driver for your database management system to the `lib` directory of your Tomcat installation.
 3. Create a directory which can be used by Communote for storing application data. This will be the Communote data directory and might for example be named `communote-data`.  
-  **Important**: this directory **must not** be a subdirectory of the Tomcat installation directory!
+   **Important**: this directory **must not** be a subdirectory of the Tomcat installation directory!
 4. Create a Communote configuration directory.
 5. Create a new file named `startup.properties` in the Communote configuration directory and add the absolute path to the Communote data directory as shown in the example:
 
-    ```ini
-    communote.data.dir=C\:/Communote/communote-data
-    ```
+   ```ini
+   communote.data.dir=C\:/Communote/communote-data
+   ```
 
-    **Note for Windows**: The colon (':') has to be escaped with a backslash and all backslashes in the path have to be replaced by normal slashes as shown in the example.
+   **Note for Windows**: The colon (':') has to be escaped with a backslash and all backslashes in the path have to be replaced by normal slashes as shown in the example.
 6. Open the file `conf/context.xml` of your Tomcat installation and add the following lines between the elements `<context ...>` and `</context>`. Replace the value for `communote.config.dir` with the absolute path to your Communote configuration directory. The path must be in the format of your operating system (slash for Linux and backslash for Windows). Escaping characters as in step 5 is not necessary.
 
-    ```xml
-    <Environment name="communote.instance.name"
-        type="java.lang.String"
-        value="communote" />
-    <Environment name="communote.config.dir"
-        type="java.lang.String"
-        value="Absolute path to the directory that contains startup.properties without any escaping" />
-    ```
+   ```xml
+   <Environment name="communote.instance.name"
+       type="java.lang.String"
+       value="communote" />
+   <Environment name="communote.config.dir"
+       type="java.lang.String"
+       value="Absolute path to the directory that contains startup.properties without any escaping" />
+   ```
 
 7. Optional for Linux systems (recommended): Create or select a special user without root access that should be able to run Communote. This user needs to have read and write access to the Communote configuration and data directories and should be the owner of the Tomcat installation.
 8. Copy the Communote WAR file to the `webapps` directory of your Tomcat installation and rename it to 'ROOT.war'. In case there is already a directory named 'ROOT' in the `webapps` directory, remove it.
 9. Java system parameters
-  1. For a stable Communote installation some Java system parameters need to be adjusted. Tomcat provides the `JAVA_OPTS` environment variable for this kind of customization. This variable can be defined in the `bin/sentenv.bat` (Windows) or `bin/setenv.sh` (Linux) files of the Tomcat installation. Our recommendations for a normal installation are:
+   1. For a stable Communote installation some Java system parameters need to be adjusted. Tomcat provides the `JAVA_OPTS` environment variable for this kind of customization. This variable can be defined in the `bin/sentenv.bat` (Windows) or `bin/setenv.sh` (Linux) files of the Tomcat installation. Our recommendations for a normal installation are:
 
-    ```bash
-    # Linux
-    JAVA_OPTS="${JAVA_OPTS} -server -Djava.awt.headless=true -Xms256m -Xmx768m -Dorg.apache.jasper.compiler.Parser.STRICT_QUOTE_ESCAPING=false"
-    ```
+      ```bash
+      # Linux
+      JAVA_OPTS="${JAVA_OPTS} -server -Djava.awt.headless=true -Xms256m -Xmx768m -Dorg.apache.jasper.compiler.Parser.STRICT_QUOTE_ESCAPING=false"
+      ```
 
-    ```bat
-    rem Windows
-    set JAVA_OPTS=%JAVA_OPTS% -server -Djava.awt.headless=true -Xms256m -Xmx768m -Dorg.apache.jasper.compiler.Parser.STRICT_QUOTE_ESCAPING=false
-    ```
+      ```bat
+      rem Windows
+      set JAVA_OPTS=%JAVA_OPTS% -server -Djava.awt.headless=true -Xms256m -Xmx768m -Dorg.apache.jasper.compiler.Parser.STRICT_QUOTE_ESCAPING=false
+      ```
 
-  2. On a server without a graphical user-interface the parameter ```-Djava.awt.headless=true``` is **required**.
-  3. On a 32-bit Windows system the parameter ```-server``` must **not** be used.
+   2. On a server without a graphical user-interface the parameter ```-Djava.awt.headless=true``` is **required**.
+   3. On a 32-bit Windows system the parameter ```-server``` must **not** be used.
 10. Now you can start your server. Make sure to do this as the correct user on Linux.
 
 ## 2.4 Set-up Communote with the web installer
