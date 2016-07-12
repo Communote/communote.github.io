@@ -82,7 +82,7 @@ COMMUNOTE_INSTALL_DIR/communote/bin/startup.bat
 COMMUNOTE_INSTALL_DIR/communote/bin/shutdown.bat
 ```
 
-## 3.3 Updating a Communote installation
+## 3.3 Update a Communote installation
 
 To update an existing Communote installation to a new version you can follow the steps below.
 
@@ -135,9 +135,11 @@ Depending on the type of your installation the update process differs slightly.
   * Delete the content of the `temp` directory of your Tomcat installation.
   * Start the Tomcat.
 
+
 ## 3.4 Update the Tomcat of a Linux or Windows installation package installation
 
-The Linux and Windows installation packages contain a bundled Apache Tomcat which should be updated from time to time to the current minor version of the supported Tomcat release. This contributes to a secure and stable installation. The minor version refers to the last number in the version string. So for example if Communote supports the Tomcat major version 8.0, the minor versions are 8.0.1, 8.0.36 and so on.
+The Linux and Windows installation packages contain a bundled Apache Tomcat which should be updated from time to time to the current minor version of the supported Tomcat release. This contributes to a secure and stable installation.  
+The minor version refers to the last number in the version string. So for example if Communote supports the Tomcat major version 8.0, the minor versions are 8.0.1, 8.0.36 and so on.
 
 There are two alternatives for updating the Tomcat which are described in the next sections.
 
