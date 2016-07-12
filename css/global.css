@@ -7402,21 +7402,27 @@ body #doc .doc-content pre {
 body #doc .doc-content code {
   word-wrap: break-word;
 }
-/* line 506, doc.less */
+/* line 504, doc.less */
+body #doc .doc-content code.highlighter-rouge {
+  background-color: transparent;
+  border: 1px solid #dedede;
+  color: #000;
+}
+/* line 511, doc.less */
 body #doc .doc-content #json-box-container pre {
   margin: 0px;
 }
-/* line 510, doc.less */
+/* line 515, doc.less */
 body #doc .doc-content .video-js {
   margin: 30px 0px;
 }
-/* line 514, doc.less */
+/* line 519, doc.less */
 body #doc .doc-content video {
   display: block;
   margin: 30px 0px;
   border: 1px solid #c0c0c0;
 }
-/* line 520, doc.less */
+/* line 525, doc.less */
 body #doc .doc-content p.required,
 body #doc .doc-content p.dataType {
   display: block;
@@ -7424,16 +7430,16 @@ body #doc .doc-content p.dataType {
   font-size: 80%;
   margin-left: 4px;
 }
-/* line 522, doc.less */
+/* line 527, doc.less */
 body #doc .doc-content .post-content img.inline {
   margin: 0px;
   margin-bottom: 6px;
 }
-/* line 526, doc.less */
+/* line 531, doc.less */
 body #doc .doc-content .panel-heading {
   font-weight: bold;
 }
-/* line 530, doc.less */
+/* line 535, doc.less */
 body #doc .doc-content .note code,
 body #doc .doc-content .alert code,
 body #doc .doc-content .warning code,
@@ -7444,83 +7450,83 @@ body #doc .doc-content h4 code {
   color: inherit;
   padding: 0px;
 }
-/* line 535, doc.less */
+/* line 540, doc.less */
 body #doc .doc-content a.accordion-toggle {
   font-style: normal;
 }
-/* line 539, doc.less */
+/* line 544, doc.less */
 body #doc .doc-content h3.codeExplanation {
   font-size: 18px;
   font-style: normal;
   color: black;
   line-height: 24px;
 }
-/* line 546, doc.less */
+/* line 551, doc.less */
 body #doc .doc-content span.soft {
   color: #c0c0c0;
 }
-/* line 550, doc.less */
+/* line 555, doc.less */
 body #doc .doc-content .parameter {
   font-family: courier;
   color: red !important;
 }
-/* line 555, doc.less */
+/* line 560, doc.less */
 body #doc .doc-content .formBoundary {
   border: 1px solid gray;
   padding: 15px;
   margin: 15px 0px;
   background-color: whitesmoke;
 }
-/* line 562, doc.less */
+/* line 567, doc.less */
 body #doc .doc-content .videoThumbs img {
   float: left;
   margin: 15px 15px 15px 0px;
   box-shadow: 2px 2px 1px #f0f0f0;
   border: 1px solid #dedede;
 }
-/* line 569, doc.less */
+/* line 574, doc.less */
 body #doc .doc-content *:hover > .anchorjs-link {
   transition: color .25s linear;
   text-decoration: none;
 }
-/* line 574, doc.less */
+/* line 579, doc.less */
 body #doc .doc-content .kbCaption {
   color: white;
   background-color: #444;
   padding: 10px;
 }
-/* line 580, doc.less */
+/* line 585, doc.less */
 body #doc .doc-content .flex-grid {
   display: flex;
   flex-wrap: wrap;
   margin-left: -20px;
 }
-/* line 584, doc.less */
+/* line 589, doc.less */
 body #doc .doc-content .flex-grid .grid-elem {
   flex-grow: 1;
   flex-basis: calc(10%);
   padding: 0 20px;
 }
-/* line 588, doc.less */
+/* line 593, doc.less */
 body #doc .doc-content .flex-grid .grid-elem > ul {
   margin-bottom: 30px;
 }
 @media (max-width: 767px) {
-  /* line 591, doc.less */
+  /* line 596, doc.less */
   body #doc .doc-content .flex-grid .grid-elem {
     flex-basis: calc(60%);
   }
 }
-/* line 598, doc.less */
+/* line 603, doc.less */
 body #doc #definition-box-container div a.active {
   font-weight: bold;
 }
-/* line 602, doc.less */
+/* line 607, doc.less */
 body #doc p.post-meta {
   font-size: 80%;
   color: #777;
 }
-/* line 604, doc.less */
+/* line 609, doc.less */
 body #doc .entry-date {
   font-size: 14px;
   font-size: 0.875rem;
@@ -7528,11 +7534,11 @@ body #doc .entry-date {
   margin-bottom: 0;
   text-transform: uppercase;
 }
-/* line 606, doc.less */
+/* line 611, doc.less */
 body #doc .footer {
   text-align: center;
 }
-/* line 610, doc.less */
+/* line 615, doc.less */
 body #doc .back-to-top {
   background-color: #f59350;
   bottom: 50px;
