@@ -181,7 +181,7 @@ To install Communote from WAR file follow the instructions below.
   <Environment name="communote.config.dir"
       type="java.lang.String"
       value="Absolute path to the directory that contains startup.properties without any escaping" />
-  ```      
+  ```
   
 7. Optional for Linux systems (recommended): Create or select a special user without root access that should be able to run Communote. This user needs to have read and write access to the Communote configuration and data directories and should be the owner of the Tomcat installation.
 8. Copy the Communote WAR file to the `webapps` directory of your Tomcat installation and rename it to 'ROOT.war'. In case there is already a directory named 'ROOT' in the `webapps` directory, remove it.
