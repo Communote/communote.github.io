@@ -38,6 +38,11 @@ entries:
       audience: users, developers, admins
       version: all
       output: web
+    - title: Documentation Guide
+      url: /doc/doc_doc.html
+      audience: users, developers, admins
+      version: all
+      output: web
     - title: FAQ
       url: /doc/doc_faq.html
       audience: users, developers, admins
@@ -107,7 +112,7 @@ entries:
     version: all
     output: web, pdf
     items:
-    - title: 1 System requirements
+    - title: 1 System Requirements
       url: /doc/install_requirements.html
       audience: admins
       version: all
