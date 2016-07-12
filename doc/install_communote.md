@@ -7,19 +7,20 @@ last_updated: March 10, 2016
 
 ## 2.1 Types of installation
 
-There are different ways to install Communote:
+This chapter describes the available installation types.
 
-**Installation with an installation package**
+### 2.1.1 Installation with an installation package
 
 There are special installation packages for Linux and Windows which already contain a preconfigured Apache Tomcat server. This reduces the initial configuration but makes an update of the Tomcat server a bit more complicated.  
 The available packages are:
+
 * a Windows 32-bit package which includes the Windows service wrapper and the compiled APR/native library for use with 32-bit JVMs
 * a Windows 64-bit package which includes the Windows service wrapper and the compiled APR/native library for use with 64-bit JVMs
 * a Linux package which actually is a generic package because it does not contain any native code
  
 The Windows packages have a .zip and the Linux package has a .tar.gz file-ending.
 
-**Installation by WAR-File**
+### 2.1.1 Installation by WAR-File
 
 The installation by WAR file is the most flexible way to setup Communote but requires a little more configuration.
 
@@ -77,12 +78,14 @@ Replace `communote_db_name`, `communote_db_user` and `communote_db_password` wit
 ### 2.2.3 Microsoft SQL-Server
 
 For creating the database start the Microsoft SQL Server Management Studio. There you should first add a dedicated user for the Communote database:
+
 * select Security -> Logins -> New Login
   * provide the 'Login name'
   * select 'SQL Server authentication' and insert a password
   * choose English as 'Default langauge'
 
 After this create a new database:
+
 * Choose new database
   * insert the 'Database name'
   * select the dedicated user as 'Owner'
