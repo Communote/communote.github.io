@@ -118,11 +118,11 @@ Before Communote can be installed your server has to be prepared:
    ```
 
 2. Download a JDBC driver for your database management system. The installation of the driver, which is a JAR file, will be described in the individual installation sections.
-  * PostgreSQL: the JDBC driver is available at https://jdbc.postgresql.org/download.html. You should typically pick the current JDBC42 driver but please also read the documentation on that page.
+  * PostgreSQL: the JDBC driver is available at [https://jdbc.postgresql.org/download.html](https://jdbc.postgresql.org/download.html). You should typically pick the current JDBC42 driver but please also read the documentation on that page.
     * _Note: if you are using the Linux or Windows installation package this step can be skipped because the driver is already contained_
-  * MySQL: the JDBC driver can be downloaded from http://dev.mysql.com/downloads/connector/j/. You need a driver with version 5.1.x (e.g. 5.1.39).
-  * Microsoft SQL-Server: the JDBC driver is available at http://jtds.sourceforge.net/.
-  * Oracle: the JDBC driver can be downloaded from http://jtds.sourceforge.net/. You should take the ojdbc6.jar.
+  * MySQL: the JDBC driver can be downloaded from [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/). You need a driver with version 5.1.x (e.g. 5.1.39).
+  * Microsoft SQL-Server: the JDBC driver is available at [http://jtds.sourceforge.net/](http://jtds.sourceforge.net/).
+  * Oracle: a suitable JDBC Thin driver can be downloaded from [http://www.oracle.com/technetwork/indexes/downloads/index.html](http://www.oracle.com/technetwork/indexes/downloads/index.html). You should take the ojdbc6.jar.
 3. Download the Communote package you want to install from [GitHub](https://github.com/Communote/communote-server/releases).
  
 Now you can install Communote by following the steps in section 2.3.2 if you selected a Windows or Linux installation package or the instructions of section 2.3.3 if you want to use the WAR file.
@@ -194,6 +194,7 @@ To install Communote from WAR file follow the instructions below.
     JAVA_OPTS="${JAVA_OPTS} -server -Djava.awt.headless=true -Xms256m -Xmx768m -Dorg.apache.jasper.compiler.Parser.STRICT_QUOTE_ESCAPING=false"
     ```
     
+    
     ```bat
     rem Windows
     set JAVA_OPTS=%JAVA_OPTS% -server -Djava.awt.headless=true -Xms256m -Xmx768m -Dorg.apache.jasper.compiler.Parser.STRICT_QUOTE_ESCAPING=false
@@ -205,7 +206,7 @@ To install Communote from WAR file follow the instructions below.
 
 ## 2.4 Set-up Communote with the web installer
 
-Start your browser for completing the installation and go to the homepage of your Communote instance. By default it will be available at http://localhost:8080/.
+Start your browser for completing the installation and go to the homepage of your Communote instance. By default it will be available at [http://localhost:8080/](http://localhost:8080/).
 
 Now you should see the start screen of the web installer:
 
