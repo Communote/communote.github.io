@@ -77,7 +77,7 @@ Note: the ``PRIVILEGED_USER`` refers to the dedicated user which was selected du
 
 When using the Windows installation package you can start and stop Communote with the following commands:
 
-```batch
+```bash
 COMMUNOTE_INSTALL_DIR/communote/bin/startup.bat
 COMMUNOTE_INSTALL_DIR/communote/bin/shutdown.bat
 ```
@@ -144,6 +144,7 @@ There are two alternatives for updating the Tomcat which are described in the ne
 ### 3.4.1 Update with a new installation
 
 New Communote releases typically bundle an up-to-date version of the supported Tomcat. Therefore, the Tomcat can be updated by doing a new installation as outlined below.
+
 * Stop Communote (the Tomcat) and ensure that the process was stopped.
 * Create a backup of the Communote database and the Communote data directory.
 * Rename your current Communote installation directory and create a new installation directory with the original name at the same location.
@@ -156,6 +157,7 @@ New Communote releases typically bundle an up-to-date version of the supported T
 ### 3.4.2 Update with the latest upstream minor version
 
 You can also update the Tomcat to the latest minor version of the supported release by downloading it from the Tomcat website.
+
 * Stop Communote (the Tomcat) and ensure that the process was stopped.
 * Download the Tomcat (ZIP or tar.gz file) package for your platform from the [Apache Tomcat website](http://tomcat.apache.org/).
 * Rename your current Communote installation directory (`RENAMED_COMMUNOTE_INSTALL_DIR`) and create a new installation directory with the original name at the same location.
