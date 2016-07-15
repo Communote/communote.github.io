@@ -31,9 +31,9 @@ The easiest way to create a new plugin is to use Maven's [Archetype](http://mave
    where the parameters have the following meaning.
 
    * `archetypeGroupId`, `archetypeArtifactId` and `archetypeVersion` define that the [Communote plugin archetype](https://github.com/Communote/communote-plugin-maven-archetype) in Version 1.1 should be used
-   * `groupId` defines the groupId of the Mave project of your Communote plugin
-   * `artifactId` defines the artifactId of the Mave project of your Communote plugin
-   * `version` (optional) defines the version of the Mave project of your Communote plugin
+   * `groupId` defines the groupId of the Maven project of your Communote plugin
+   * `artifactId` defines the artifactId of the Maven project of your Communote plugin
+   * `version` (optional) defines the version of the Maven project of your Communote plugin
    * `communoteVersion` defines the version of Communote you want to build your plugin against
    
    The last 4 parameters can be omitted. In that case you will be asked by Archetype to type in the values.
