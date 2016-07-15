@@ -4,40 +4,56 @@ tags: [development]
 keywords: plugin, note manipulation, maven, extension points, tags, attachments, preferences, repost, notification, rendering
 last_updated: March 10, 2016
 ---
-Communote uses OSGi (Apache Felix) in conjuction with Apache iPOJO for offering extensibility  and variability in an easy way. This also provides the possibility to add and remove plugins while Communote runs. Currently it is possible to:
+Because of an embedded OSGi container (Apache Felix) and a growing set of extension points Communote can be customized easily with the help of OSGi bundles, or how we call them: plugins. With these plugins, which can be added and removed at runtime, it is for instance possible to:
 
-* Replace existing templates and though creating your own theme,
-* Add your own controller for a specific URL,
-* Add your own  NoteRenderingPreProcessor.
+* add custom CSS or replace existing templates and thus, create your your own theme,
+* add your own JavaScript components to modify the behavior of the frontend,
+* add your own controller for a specific URL,
+* hook into the creation and rendering of notes and augment them with additional information,
+* provide a new authentication mechanism,
+* add your own languages and translations.
 
-## 1.2.1 Creating a Plugin using Maven
+The next chapters will walk you through the creation of such a plugin and will show you some of the extension points. The full source code of this tutuorial can be found in `TODO`.
 
-The easiest way to create a new plugin is to use Mavens [archetype](http://maven.apache.org/guides/introduction/introduction-to-archetypes.html) mechanism.
+## 1.2.1 Create a Plugin
 
-1. Open a command line
-2. Change to the folder you want to create the plugin in
-3. Call the following command (change the values for groupID, artifactId and version to your needs):
+The easiest way to create a new plugin is to use Maven's [Archetype](http://maven.apache.org/guides/introduction/introduction-to-archetypes.html) mechanism.
+
+1. Make sure your development system is prepared. See [Preparation for Communote Development]() for details. You should also [install a Communote](http://communote.github.io/doc/install_communote.html) for testing your plugin.
+2. Open a command line
+2. Change to the folder in which you want to create the plugin
+3. Call the following command (change the values for groupId, artifactId, version and communoteVersion to your needs):
 
    ```shell
-   mvn archetype:generate -DgroupId=yourGroupId -DartifactId=yourPluginsArtifactId -Dversion=1.0-SNAPSHOT -DarchetypeArtifactId=communote-plugin-archetype -DarchetypeGroupId=com.communote.plugins -DarchetypeVersion=2.1.1-SNAPSHOT
+   mvn archetype:generate -DarchetypeGroupId=com.communote.plugins -DarchetypeArtifactId=communote-plugin-archetype -DarchetypeVersion=1.1 -DgroupId=yourGroupId -DartifactId=yourPluginsArtifactId -Dversion=1.0-SNAPSHOT -DcommunoteVersion=3.4.0
    ```
 
-The value for `archetypeVersion` specifies the version of Communote your plugin should be written for.
+   where the parameters have the following meaning.
 
-ToDo: Slim the generated folder structure of the archetype artifact.
+   * `archetypeGroupId`, `archetypeArtifactId` and `archetypeVersion` define that the [Communote plugin archetype](https://github.com/Communote/communote-plugin-maven-archetype) in Version 1.1 should be used
+   * `groupId` defines the groupId of the Mave project of your Communote plugin
+   * `artifactId` defines the artifactId of the Mave project of your Communote plugin
+   * `version` (optional) defines the version of the Mave project of your Communote plugin
+   * `communoteVersion` defines the version of Communote you want to build your plugin against
+   
+   The last 4 parameters can be omitted. In that case you will be asked by Archetype to type in the values.
+
+After running the command a new directory will be created in your current working-directory. This directory contains a Maven project for developing your Communote plugin. You can already build this plugin by changing into the directory and invoking `mvn` on the command line. This will create the plugin, a JAR file, in the target directory. Although, it doesn't do much, it can already be deployed to your Communote. How this can be done is explained in our [installation manual](http://communote.github.io/doc/install_extensions.html).
+
 
 ## 1.2.2 Example 1 - Extend Note Rendering
 
-In this example we would like to create a plugin to extend the note rendering pre processor. We will define two placeholders named `[logo]` and `[github]`, which will be later replaced by our plugin to the Communote logo and a link to our Github. Furthermore we want the alternative text of the logo and the link text localized. Before you start maybe it's good to create a message via JavaScript, which will show the user that your Communote is under construction.
+In this example we will show you how the note rendering can be modified. We will define two placeholders named `[logo]` and `[github]` which when used in the body of a note will be replaced by our plugin with the Communote logo and a link to our GitHub page. Furthermore, we want to define an alternative text for the logo and a text for the link which can be localized.
+Before you start maybe it's good to create a message via JavaScript, which will show the user that your Communote is under construction.
 
 1. To generate such a construction message you have to create a JavaScript file `construction.js` at `src\main\resources\META-INF\resources\static\javascript`:
 
    ```javascript
-   // Jumps in when the namespace Communote and the main layout is loaded
+   // Jumps in when the namespace communote is defined and the main layout is loaded
    if (window.communote && communote.environment && communote.environment.page == 'main') {
-       // Add the construction container before Communote start to initialize everything
+       // Add a callback that is invoked before the Communote JavaScript component is initialized
        communote.initializer.addBeforeInitCallback(function() {
-           //... it generates a container with a localized message and append it at the top
+           //... this snippet creates a container with a localized message and appends it to the top
            var constructionContainer  = new Element('div', {
                    id: 'construction-container',
                    html: '<h1>' + communote.i18n.getMessage("plugins.communote.tutorial.construction.text") + '</h1>'
@@ -47,10 +63,10 @@ In this example we would like to create a plugin to extend the note rendering pr
    }
    ```
 
-   With the `communote.i18n.getMessage()` function you are able to search for translation message keys.
+   With the `communote.i18n.getMessage()` function you can get a localized text which is identified by the key given as argument.
 
-2. You need to create a message properties at `src\main\resources\META-INF\resources\i18n` to store the keys with there translation:
-   * `messages_en.properties` (for the English translation) and insert:
+2. You need to create a properties file at `src/main/resources/META-INF/resources/i18n` to store the keys and a translation:
+   * `messages_en.properties` (for the English translation) and insert the following line. The keys of the messages of your plugin should be unique so that another developer does not unintentionally overwrite them.
 
      ````properties
      plugins.communote.tutorial.construction.text=Warning! Your Communote is right now under construction.
@@ -62,7 +78,7 @@ In this example we would like to create a plugin to extend the note rendering pr
      plugins.communote.tutorial.construction.text=Achtung! Ihr Communote ist gerade im Aufbau.
      ````
 
-3. But you are not able to use these message keys in the JavaScript context so we need a extension to register them. Go to your plugin Java folder where the `Activator.java` takes place and delete the file because in this example we do not need it. Create instead at the same folder the java file called `TutorialJsMessages`:
+3. But you are not yet able to use this message key in the JavaScript context. You will first have to expose it with a special extension point. Therfore, go to your plugin and look for a directory which contains the file `Activator.java` file. Now delete this file because it is not needed in this example and create a Java file named `TutorialJsMessages.java` instead. Add the following content (and the package and import statements which we omitted for better readability) to it:
 
    ```java
    @Component
@@ -85,7 +101,7 @@ In this example we would like to create a plugin to extend the note rendering pr
 
    ```
 
-4. You also need to register your JavaScript file in your plugin. That is why we need a JSON file called `javascript-categories.json` at `src\main\resources\META-INF\resources\`:
+4. You also need to let Communote know that the JavaScript file of your plugin should be included when the main page of Communote is rendered. This is achieved by creating a JSON file called `javascript-categories.json` in `src/main/resources/META-INF/resources/`:
 
    ```json
    {
@@ -95,7 +111,7 @@ In this example we would like to create a plugin to extend the note rendering pr
    }
    ```
 
-5. Build the plugin with a simple `mvn` and deploy the jar file at the target folder to your Communote data plugin directory (e.g. `D:\Communote\Data\plugins`). Reload your Communote and when everything is good you will see this:
+5. Build and and deploy the plugin as explained at the end of the chapter [Create a Plugin](#Create-a-plugin). Then reload the Communote main page in your browser which should now look like this:
 
     ![](images/dev/construction_message_unfinished.png)
 
@@ -179,7 +195,7 @@ In this example we would like to create a plugin to extend the note rendering pr
         *             in case something unexpected lead to the failure of the processor
       */
       @Override
-      public boolean processNoteContent(NoteRenderContext context, NoteListData item)
+      public boolean processNoteContent(NoteRenderContext context, NoteData item)
          throws NoteRenderingPreProcessorException {
          return false;
       }
@@ -211,7 +227,7 @@ In this example we would like to create a plugin to extend the note rendering pr
         * @return true if the mode can be handled by the processor, false otherwise
       */
       @Override
-      public boolean supports(NoteRenderMode mode, NoteListData item) {
+      public boolean supports(NoteRenderMode mode, NoteData item) {
          return NoteRenderMode.PORTAL.equals(mode);
       }
    }
@@ -230,10 +246,10 @@ In this example we would like to create a plugin to extend the note rendering pr
    }
    ```
 
-10. Jump into the function `processNoteContent(NoteRenderContext context, NoteListData item)` and you can use the `item` object to get and set the short and full content of a note:
+10. Jump into the function `processNoteContent(NoteRenderContext context, NoteData item)` and you can use the `item` object to get and set the short and full content of a note:
 
     ```java
-    public boolean processNoteContent(NoteRenderContext context, NoteListData item)
+    public boolean processNoteContent(NoteRenderContext context, NoteData item)
        throws NoteRenderingPreProcessorException {
        // Setting the new content of the note delivered by the replacement function
        item.setContent(processContent(item.getContent()));
@@ -274,7 +290,7 @@ In this example we would like to create a plugin to extend the note rendering pr
        }
        ````
 
-13. Build the plugin with a simple ```mvn``` and deploy the jar file at the target folder to your Communote data plugin directory (e.g. `D:\Communote\Data\plugins`). Reload your Communote and when everything is go you will see this:
+13. Build and redeploy your plugin again. After reloading your Communote main page you should see this:
 
     ![](images/dev/note_manipulation_result.png)
 
@@ -287,12 +303,13 @@ This example will explain you how to create a view at the notes overview with on
    Lets start at your `resources/static/javascript` folder and place a new javascript file `CreateHelloWorldView.js` in it:
 
    ```javascript
-   // Jumps in when the namespace communote and the main layout is loaded
+   // Jumps in when the namespace communote is defined and the main layout is loaded
    if (window.communote && communote.environment && communote.environment.page == 'main') {
-     // Add the new view before Communote start to initialize everything
+     // Add a callback that is invoked before the Communote JavaScript component is initialized
      communote.initializer.addBeforeInitCallback(function() {
        var widgets, views;
-       // Parent view name where the new subview takes place (other examples are topicsOverview or topicSelected)
+       // parentViewId defines where the new subview should be added (other parent views defined by
+       // the core are for example topicsOverview or topicSelected)
        var parentViewId = 'notesOverview';
        // Name of the new subview
        var viewName = 'helloWorld';
@@ -306,10 +323,10 @@ This example will explain you how to create a view at the notes overview with on
 
        // Add the new view to the list of views
        views[subViewName] = {
-         // When the user change the view and 'hide' is defined the view container will hidden by display: none;
-         // Another option is 'delete' for delete from the DOM
+         // When the user changes the view and 'hide' is defined the view container will be hidden.
+         // Another option is 'delete' for deleting it from the DOM
          previousViewAction: 'hide',
-         // List of shown widgets for the view
+         // List all the widgets that should be shown in the new view
          visibleWidgets: ['EntityChooser','VerticalNavigation',
            'HorizontalNavigation', 'GlobalIdShowBannerImage', 'HelloWorld']
            // You can also add parentViewId: 'insertMainView' as an option
@@ -319,12 +336,12 @@ This example will explain you how to create a view at the notes overview with on
        // Get list of all widgets
        widgets = communote.configuration.mainPageViewManagerConfig.widgets;
 
-       // Add a HelloWorld widget to the list of widgets
+       // Add our HelloWorld widget to the list of all registered widgets
        widgets['HelloWorld'] = {
-         // Rendered as a CSS class to the widget
-         // and act as identifier for the java and the javascript class without the "Widget" suffix
-         widgetType: 'HelloWorld',
-         // The CSS selector defines where the widget takes place
+         // The widgetType is used to identify the Java and JavaScript widget class. Moreover,
+         // a CSS class with that name is added to the container of the widget.
+         widgetType: 'HelloWorldWidget',
+         // The CSS selector defines where the widget should be injected
          containerSelector: '#cn-list-posts'
        };
      });
@@ -369,7 +386,7 @@ This example will explain you how to create a view at the notes overview with on
 
        ````html
        ##
-       ## $widgetInstance -> via the widget instance it is possible to access functions and variables by the JavaScript widget class
+       ## $widgetInstance -> via the widget instance it is possible to access functions and variables of the JavaScript widget object
        ##
        #set($widgetInstance = "#jsCurrentWidget()")
        <div class="cn-form-container">
@@ -398,13 +415,13 @@ This example will explain you how to create a view at the notes overview with on
                /*
                First part "plugin/" is required and marks the widget as one that is provided by a plugin.
                The maven placeholder is needed to create an unique widget group name based on the name of the OSGi bundle and
-               will be replaced by building the plugin.
+               will be replaced when building the plugin.
                */
                widgetGroup: 'plugin/${maven-symbolicname}',
 
                //This function prints out the input value via a notification
                showSuccessMessage: function() {
-                   var message = this.domNode.getElementById(this.widgetId + '_message').get("value")
+                   var message = this.domNode.getElementById(this.widgetId + '_message').get('value')
                    showNotification(NOTIFICATION_BOX_TYPES.success, null, message);
                }
            });
@@ -557,7 +574,7 @@ This example will explain you how to create a view at the notes overview with on
         */
        @Validate
        public void start() {
-           WebServiceLocater.instance().getService(WidgetFactoryRegistry.class)
+           WebServiceLocator.instance().getService(WidgetFactoryRegistry.class)
                       .addWidgetFactory(this.symbolicName, this);
        }
 
@@ -566,7 +583,7 @@ This example will explain you how to create a view at the notes overview with on
         */
        @Invalidate
        public void stop() {
-           WebServiceLocater.instance().getService(WidgetFactoryRegistry.class).removeWidgetFactory(
+           WebServiceLocator.instance().getService(WidgetFactoryRegistry.class).removeWidgetFactory(
                       this.symbolicName);
        }
    }
