@@ -1,5 +1,5 @@
 ---
-title: 1.4 Build the core
+title: 2.3 Build the Core
 tags: [development]
 keywords: core, build, git clone
 last_updated: March 10, 2016
@@ -7,17 +7,17 @@ last_updated: March 10, 2016
 The Communote core is a Java servlet based web application with an embedded OSGi container which is available in the [Communote-server](https://github.com/Communote/communote-server) repository on GitHub. It consists of the core components and a set of OSGi plugins, the so called 'core plugins', which are bundled in the WAR file of an official Communote release.  
 Communote uses [Apache Maven](https://maven.apache.org) as build automation tool. To build the Communote core from source just follow the steps outlined in the next paragraphs.
 
-## 1.4.1 Get the source code
+## 2.3.1 Get the source code
 To get the source code you can use Git's clone mechanism or download it as a zip archive directly from [GitHub](https://github.com/Communote/communote-server). The download can be triggered in the 'Clone or download' dropdown. For cloning you can use the following snippet:
 
 ```
 git clone https://github.com/Communote/communote-server.git
 ```
 
-## 1.4.2 Build
+## 2.3.2 Build
 The Communote server repository contains the two directories ```build``` and ```communote```. The former contains Maven modules to build the final WAR file and the latter contains all modules to create the artifacts which should be assembled to the final WAR file.
 
-For building Oracle's JDK 8 and a current version of Maven 3 needs to be installed. If you don't have the JDK you can get it from [Oracle's download page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). To setup Maven you can follow the instructions at the [Maven homepage](https://maven.apache.org/install.html). As soon as these requirements are met you can change into the directory ```communote-server/communote``` and execute the following commands:
+For building you have to setup your development environment as described in the [preparations section](dev_preparation.html). As soon as these requirements are met you can change into the directory ```communote-server/communote``` and execute the following commands:
 
 ```
 mvn -Ppre

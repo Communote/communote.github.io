@@ -1,5 +1,5 @@
 ---
-title: 1.2 Write a plugin
+title: 2.1 Write a plugin
 tags: [development]
 keywords: plugin, note manipulation, maven, extension points, tags, attachments, preferences, repost, notification, rendering
 last_updated: March 10, 2016
@@ -15,17 +15,17 @@ Because of an embedded OSGi container (Apache Felix) and a growing set of extens
 
 The next chapters will walk you through the creation of such a plugin and will show you some of the extension points. The full source code of this tutuorial can be found in `TODO`.
 
-## 1.2.1 Create a Plugin
+## 2.1.1 Create a Plugin
 
 The easiest way to create a new plugin is to use Maven's [Archetype](http://maven.apache.org/guides/introduction/introduction-to-archetypes.html) mechanism.
 
-1. Make sure your development system is prepared. See [Preparation for Communote Development]() for details. You should also [install a Communote](http://communote.github.io/doc/install_communote.html) for testing your plugin.
+1. Make sure your development system is prepared. See [preparation section](dev_preparation.html) for details. You should also [install a Communote](http://communote.github.io/doc/install_communote.html) for testing your plugin.
 2. Open a command line
 2. Change to the folder in which you want to create the plugin
 3. Call the following command (change the values for groupId, artifactId, version and communoteVersion to your needs):
 
    ```shell
-   mvn archetype:generate -DarchetypeGroupId=com.communote.plugins -DarchetypeArtifactId=communote-plugin-archetype -DarchetypeVersion=1.1 -DgroupId=yourGroupId -DartifactId=yourPluginsArtifactId -Dversion=1.0-SNAPSHOT -DcommunoteVersion=3.4.0
+   mvn archetype:generate -DarchetypeGroupId=com.communote.plugins -DarchetypeArtifactId=communote-plugin-archetype -DarchetypeVersion=1.1 -DgroupId=yourGroupId -DartifactId=yourPluginsArtifactId -Dversion=1.0-SNAPSHOT -DcommunoteVersion=3.4
    ```
 
    where the parameters have the following meaning.
@@ -41,7 +41,7 @@ The easiest way to create a new plugin is to use Maven's [Archetype](http://mave
 After running the command a new directory will be created in your current working-directory. This directory contains a Maven project for developing your Communote plugin. You can already build this plugin by changing into the directory and invoking `mvn` on the command line. This will create the plugin, a JAR file, in the target directory. Although, it doesn't do much, it can already be deployed to your Communote. How this can be done is explained in our [installation manual](http://communote.github.io/doc/install_extensions.html).
 
 
-## 1.2.2 Example 1 - Extend Note Rendering
+## 2.1.2 Example 1 - Extend Note Rendering
 
 In this example we will show you how the note rendering can be modified. We will define two placeholders named `[logo]` and `[github]` which when used in the body of a note will be replaced by our plugin with the Communote logo and a link to our GitHub page. Furthermore, we want to define an alternative text for the logo and a text for the link which can be localized.
 Before you start maybe it's good to create a message via JavaScript, which will show the user that your Communote is under construction.
@@ -296,7 +296,7 @@ Before you start maybe it's good to create a message via JavaScript, which will 
 
     _Figure "Result for Example 1 - Extend Note Rendering"_
 
-## 1.2.3 Example 2 - Create a view with a widget
+## 2.1.3 Example 2 - Create a view with a widget
 This example will explain you how to create a view at the notes overview with one simple widget on it.
 
 1. At the horizontal navigation next to the bookmarklet link we want to register a new view with a widget as content.
@@ -596,14 +596,14 @@ This example will explain you how to create a view at the notes overview with on
    _Figure "Result for Example 2 - Create a view with a widget"_
 
 
-## 1.2.4 Other Plugin examples
+## 2.1.4 Other Plugin examples
 
 You can download and look through other examples:
 
 * [communote-development-examples-plugin](https://github.com/communote/communote-development-examples-plugin)
 * [communote-example-external-authentication](https://github.com/communote/communote-example-external-authentication)
 
-## 1.2.5 Platform Extension Points
+## 2.1.5 Platform Extension Points
 
 ### 1.2.5.1 Extend Notes, Tags, Users
 
@@ -698,13 +698,13 @@ You can download and look through other examples:
   </table>
 </div>
 
-### 1.2.5.2 Administration Page
+### 2.1.5.2 Administration Page
 
 An own page at the administration is possible via an AdminController. For an example take a look at the AdminController of this plugin: #Todo: Link zum {AdminstrationPluginSample}
 
 Extend the `AdministrationViewController` and implement the `Controller` Interface.
 
-### 1.2.5.3 Events
+### 2.1.5.3 Events
 
 Implement the interface `com.communote.server.events.EventListener<Your Event Type>` to extend your Event.
 
@@ -748,7 +748,7 @@ The reason for the event can be that the role was added, removed or modified.</t
   </table>
 </div>
 
-### 1.2.5.4 JS Hooks
+### 2.1.5.4 JS Hooks
 
 **Initializer Callbacks**
 
@@ -834,6 +834,6 @@ Helper to initialize the application. The component provides different hooks to 
   </table>
 </div>
 
-### 1.2.5.5 Overwrite Templates
+### 2.1.5.5 Overwrite Templates
 
 It is possible to overwrite all the templates registered at the `core.vm.tiles-mappings.properties` (#ToDo: Link) with an own `vm.tiles-mapping.properties` file but it cannot be recommended. In the worst case the custom template stops working when a core update alters the overwritten template.
