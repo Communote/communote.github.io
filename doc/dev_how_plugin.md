@@ -2,7 +2,7 @@
 title: 2.1 Write a plugin
 tags: [development]
 keywords: plugin, note manipulation, maven, extension points, tags, attachments, preferences, repost, notification, rendering
-last_updated: March 10, 2016
+last_updated: August 16, 2016
 ---
 Because of an embedded OSGi container (Apache Felix) and a growing set of extension points Communote can be customized easily with the help of OSGi bundles, or how we call them: plugins. With these plugins, which can be added and removed at runtime, it is for instance possible to:
 

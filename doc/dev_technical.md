@@ -1,8 +1,8 @@
 ---
-title: 2 Technical Overview
+title: 3 Technical Overview
 tags: [development]
 keywords: layout, components, technical overview, framework, backend, frontend, plugins, terms, concepts
-last_updated: March 10, 2016
+last_updated: August 16, 2016
 ---
 
 ## 2.1 Components and Frameworks
@@ -27,7 +27,7 @@ More information will be coming soon.
 
 More information will be coming soon.
 
-## 2.3 Terms and Concepts (oder Glossary nennen?)
+## 2.3 Terms and Concepts (or name it Glossary?)
 
 ### 2.3.1 Kenmei
 

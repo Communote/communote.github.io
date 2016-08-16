@@ -2,7 +2,7 @@
 title: 2.3 Build the Core
 tags: [development]
 keywords: core, build, git clone
-last_updated: March 10, 2016
+last_updated: August 16, 2016
 ---
 The Communote core is a Java servlet based web application with an embedded OSGi container which is available in the [Communote-server](https://github.com/Communote/communote-server) repository on GitHub. It consists of the core components and a set of OSGi plugins, the so called 'core plugins', which are bundled in the WAR file of an official Communote release.  
 Communote uses [Apache Maven](https://maven.apache.org) as build automation tool. To build the Communote core from source just follow the steps outlined in the next paragraphs.

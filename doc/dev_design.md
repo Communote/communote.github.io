@@ -1,8 +1,8 @@
 ---
-title: 3 Design Guidelines
+title: 6 Design Guidelines
 tags: [design, development]
 keywords: design, guidelines
-last_updated: March 10, 2016
+last_updated: August 16, 2016
 toc: false
 ---
 
