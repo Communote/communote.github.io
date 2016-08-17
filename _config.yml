@@ -10,7 +10,7 @@ github_editme_path: Communote/communote.github.io/blob/master
 disqus_shortname: communote-doc
 
 pdf_file_name: Communote-Documentation.pdf
-pdf_rest_api_file_name: REST-API-Documentation.pdf
+pdf_rest_api_file_name: Documentation_of_Communote_Rest-Api_Plugin_3.4.pdf
 
 port: 4009
 
