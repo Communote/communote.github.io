@@ -598,10 +598,11 @@ This example will explain you how to create a view at the notes overview with on
 
 ## 2.1.4 Other Plugin examples
 
-You can download and look through other examples:
+You can download and look through other plugins like:
 
-* [communote-development-examples-plugin](https://github.com/communote/communote-development-examples-plugin)
-* [communote-example-external-authentication](https://github.com/communote/communote-example-external-authentication)
+* [Communote remote user authentication plugin](https://github.com/Communote/communote-plugin-remote-user-authentication)
+* [Communote content replacement plugin](https://github.com/Communote/communote-plugin-content-replacement)
+* or any other plugin repository (starting with communote-plugin-*) of our [GitHub account](https://github.com/Communote)
 
 ## 2.1.5 Platform Extension Points
 
