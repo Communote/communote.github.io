@@ -13,7 +13,7 @@ Because of an embedded OSGi container (Apache Felix) and a growing set of extens
 * provide a new authentication mechanism,
 * add your own languages and translations.
 
-The next chapters will walk you through the creation of such a plugin and will show you some of the extension points. The full source code of this tutuorial can be found in `TODO`.
+The next chapters will walk you through the creation of such a plugin and will show you some of the extension points. The full source code of this tutuorial can be found in the [communote-examples repository](https://github.com/Communote/communote-examples/tree/master/communote-tutorial-plugin).
 
 ## 2.1.1 Create a Plugin
 
