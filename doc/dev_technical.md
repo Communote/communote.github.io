@@ -27,9 +27,11 @@ More information will be coming soon.
 
 More information will be coming soon.
 
-## 3.3 Terms and Concepts (or name it Glossary?)
+## 3.3 Terms and Concepts
 
 ### 3.3.1 Kenmei
+
+While browsing through Communote's source code you might stumble across the term "kenmei" for instance in names of classes, methods or fields. Kenmei, which is the [romanization](https://en.wikipedia.org/wiki/Romanization_of_Japanese) of the Japanese word 件名 that can be translated with tag or subject, was Communote's internal code name. Therefore it can just be substituted with Communote.
 
 ### 3.3.2 Client, Standalone and SaaS
 
