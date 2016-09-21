@@ -179,6 +179,8 @@ _Figure "LDAP Group Synchronization"_
 
 To use a secured LDAP connection using SSL (LDAPS) simple use the correct url and port as value for the LDAP server url, i.e. <a rel="nofollow">ldaps://myDirectory.com:10636</a>. It might be necessary to make the servers certificate known to Communote, especially if your LDAPS server is using a self-signed certificate. This can be done via uploading the certificate at "Certificates" within the administration area (see chapter 2.1).
 
+When using an LDAP directory you should consider to configure Java's LDAP connection pooling. This requires setting the system properties which are described in Oracle's [LDAP connection pooling documentation](http://docs.oracle.com/javase/jndi/tutorial/ldap/connect/config.html). The properties have to be added to the ```JAVA_OPTS``` environment variable so that the Tomcat server passes them to the Java process on startup. An easy way to achieve this is by modifying the setenv.sh file on Linux or the setenv.bat on Windows. When using the WAR file installation of Communote this file can be found in the bin directory of your Tomcat installation. If you are running a Communote which has been setup with one of the installation packages the file resides in the directory ```COMMUNOTE_INSTALL_DIR/communote/bin``` (see [installation manual](http://communote.github.io/doc/install_communote.html#installation-with-an-installation-package-1) for details).
+
 ## 1.5 Security
 
 On this page, you can choose how Communote should behave, if user logon attempt failed. Here you can specify the failed logon attempts to a temporary or permanent ban.
