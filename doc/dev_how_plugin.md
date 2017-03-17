@@ -46,7 +46,7 @@ After running the command a new directory will be created in your current workin
 In this example we will show you how the note rendering can be modified. We will define two placeholders named `[logo]` and `[github]` which when used in the body of a note will be replaced by our plugin with the Communote logo and a link to our GitHub page. Furthermore, we want to define an alternative text for the logo and a text for the link which can be localized.
 Before you start maybe it's good to create a message via JavaScript, which will show the user that your Communote is under construction.
 
-1. To generate such a construction message you have to create a JavaScript file `construction.js` at `src\main\resources\META-INF\resources\static\javascript`:
+1. To generate such a construction message you have to create a JavaScript file `construction.js` at `src/main/resources/META-INF/resources/static/javascript`:
 
    ```javascript
    // Jumps in when the namespace communote is defined and the main layout is loaded
@@ -78,7 +78,7 @@ Before you start maybe it's good to create a message via JavaScript, which will 
      plugins.communote.tutorial.construction.text=Achtung! Ihr Communote ist gerade im Aufbau.
      ````
 
-3. But you are not yet able to use this message key in the JavaScript context. You will first have to expose it with a special extension point. Therfore, go to your plugin and look for a directory which contains the file `Activator.java` file. Now delete this file because it is not needed in this example and create a Java file named `TutorialJsMessages.java` instead. Add the following content (and the package and import statements which we omitted for better readability) to it:
+3. But you are not yet able to use this message key in the JavaScript context. You will first have to expose it with a special extension point. Therfore, go to your plugin and look for a directory which contains the file `Activator.java` file. Now delete this file because it is not needed in this example and create a Java file named `TutorialJsMessages.java` instead. Add the following content (and the package and import statements which we omitted for better readability) to it.
 
    ```java
    @Component
@@ -101,7 +101,7 @@ Before you start maybe it's good to create a message via JavaScript, which will 
 
    ```
 
-4. You also need to let Communote know that the JavaScript file of your plugin should be included when the main page of Communote is rendered. This is achieved by creating a JSON file called `javascript-categories.json` in `src/main/resources/META-INF/resources/`:
+4. You also need to let Communote know that the JavaScript file of your plugin should be included when the main page of Communote is rendered. This is achieved by creating a JSON file called `javascript-categories.json` in `src/main/resources/META-INF/`:
 
    ```json
    {
@@ -117,7 +117,7 @@ Before you start maybe it's good to create a message via JavaScript, which will 
 
     _Figure "Result of the construction message with no style"_
 
-6. You probably recognized that the construction message have no style. Therefore we create a `style.css` at `src\main\resources\META-INF\resources\static\styles`:
+6. You probably recognized that the construction message have no style. Therefore we create a `style.css` at `src/main/resources/META-INF/resources/static/styles`:
 
    ```css
    #construction-container {
@@ -133,7 +133,7 @@ Before you start maybe it's good to create a message via JavaScript, which will 
    }
    ```
 
-7. The CSS file needs also to register like the JavaScript files with a JSON file called `css-categories.json` at `src\main\resources\META-INF\resources\`:
+7. The CSS file needs also to register like the JavaScript files with a JSON file called `css-categories.json` at `src/main/resources/META-INF/`:
 
    ```json
    {
@@ -376,7 +376,7 @@ This example will explain you how to create a view at the notes overview with on
            }
        }
        ````
-    2. The tiles are mapped at the file `resources/META-INF/resources/vm.tiles-mappings.properties`:
+    2. The tiles are mapped at the file `resources/META-INF/vm.tiles-mappings.properties`:
 
        ````properties
        com.communote.tutorial.HelloWorld.widget=/vm/widget/HelloWorld.Widget.html.vm
@@ -501,7 +501,7 @@ This example will explain you how to create a view at the notes overview with on
          </executions>
        </plugin>
        ````
-    6. It is time to register both JavaScript files at your plugin in the `javascript-categories.json` at `resources/META-INF/resources/`:
+    6. It is time to register both JavaScript files at your plugin in the `javascript-categories.json` at `resources/META-INF/`:
 
        ````json
        {
