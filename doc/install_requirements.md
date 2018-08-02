@@ -15,7 +15,7 @@ last_updated: March 10, 2016
   * Microsoft SQL-Server 2012
   * Oracle 11g
 * depending on the installation package: Apache Tomcat server
-  * if you choose the WAR file based installation a Tomcat server is required. Although Tomcat 7 should work, we recommend a current Tomat 8.0.x.
+  * if you choose the WAR file based installation a Tomcat server is required. Although Tomcat 8 should work, we recommend a current Tomat 8.5.x (at least 8.5.32).
 * optional: an Apache HTTP server (version 2.2.5 or newer) can be installed in front of the Tomcat server
 
 **The following hardware requirements are recommended:**
