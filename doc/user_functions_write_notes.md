@@ -9,7 +9,7 @@ Using Communote you can quickly and easily write notes, messages or protocols. Y
 
 ## 2.1.1 The Editor
 
-If you want to write a new note, you will always find a small editor field above the list of notes. When you click in that field, it will change into the note editor that we have already shown you in Chapter 2. Now you can start writing right away. You can add easy formatting options like **bold**, _italic_ or <u>underlined</u> to your message.
+If you want to write a new note, you will always find a small editor field above the list of notes. When you click in that field, it will change into the note editor that we have already shown you in Chapter 2. Now you can start writing right away. You can add easy formatting options like **bold**, _italic_ or underlined to your message.
 
 The editor has further options for your message ("Topic", "People", "Tags" and "Attachments") that will help you add additional information and content to your note. Those options are not mandatory and can be used on demand. If you choose one of those options, a new input field will appear in which you can add the information.
 
@@ -39,9 +39,9 @@ _Figure "Using tags in the editor"_
 
 ### 2.1.1.3 Attachments
 
-Communote offers the possibility of adding attachments to the note and sharing them with other users. The standard configuration limits the data size to 10 MB. Please contact your Administrator, if you would like to know the exact size limit of the attachments.
+Communote offers the possibility of adding attachments to a note and sharing them with other users. The default configuration limits the size of an attachment to 10 MB. Please contact your Communote administrator if you want to find out how this limit is currently configured.
 
-You can add an attachment to your note by choosing the option "attachments" below the editor. You can now choose a file from your computer and add it to your note. Before sending in your note, you can re-check the attachment and erase it if that's necessary.
+You can add an attachment to your note by clicking the option "Attachments" below the editor. You can now choose files from your computer and add them to your note. Alternatively, attachments can also be added via drag and drop. Moreover, if there is image data in your clipboard, for instance after taking a screenshot, you can directly paste the data into the editor and an image containing the data will be attached to the note. Before publishing your note, you can re-check the attachments and remove any you don't want to send along.
 
 ![](images/editor_attachments.png)
 
@@ -102,7 +102,7 @@ _Figure "Emoticon Cheat sheet"_
 
 As you are writing or editing a note, Communote automatically saves what is typed into the editor. You will then see a sign "Saved" with a date below the editor. If you need to take a break or your work has been interrupted, the last save will automatically be loaded into the editor as you open it again. You will then be able to see the message "Backup has been loaded" below the editor. You can also click "cancel" if you don't need the autosave anymore.
 
-**Note:** Communote only saved one autosave per note. If you start a new note in another browser, the former backup will be overwritten.
+**Note:** Communote only saves one autosave per note. If you start a new note in another browser, the former backup will be overwritten.
 
 ![](images/editor_autosave.png)
 
@@ -189,7 +189,7 @@ Important: Don't change the address or the subject headline of the email!
 
 Direct messages are private messages between two or more users. They are only visible to the author and the addressee(s) and can be written as a response to another note or as a new note, but it has to be marked as a direct message within the note and it must be addressed to one or more specific users.
 
-Again there are two options for marking a note as a direct message. You can either mark it directly in the message by starting the note with a d (for direct message) followed by a space and then followed by the mentioning of the addressee (@user). If you are addressing more than one user, they must be separated by an empty space (Figure "Direct Messages"). The other way is again in the options: Below the input field of the users that you would like to notify is a field "send as direct note". If you check that field, your message will be send as direct note.
+There are two options for marking a note as a direct message. You can either mark it directly in the message by starting the note with a d (for direct message) followed by a space and then followed by the mentioning of the addressee (@user). If you are addressing more than one user, they must be separated by an empty space (Figure "Direct Messages"). The other way is again in the options: Below the input field of the users that you would like to notify is a field "send as direct note". If you check that field, your message will be send as direct note.
 
 ![](images/editor_dm.png)
 
