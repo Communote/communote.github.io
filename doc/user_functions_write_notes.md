@@ -2,10 +2,10 @@
 title: 2.1 Write Notes
 tags: [functions]
 keywords: functions, editor, notes, move, like, attachments, mentions
-last_updated: March 10, 2016
+last_updated: December 11, 2018
 ---
 
-Using Communote you can quickly and easily write notes, messages or protocols. You are thereby not - unlike other microblogging services - limited to a number of letters. You can add easy formats to your note and attach any kind of data to it. Pictures with the formats JPG, PNG or GIF will automatically be transformed into a preview within the note. It is possible to attach a video-link from YouTube or Vimeo, witch will be embed into Communote. You can also notify your colleagues using @mentions.
+Using Communote you can quickly and easily write notes, messages or protocols. You are thereby not - unlike other microblogging services - limited to a number of letters. You can apply formatting to the content and attach any kind of data to it. Pictures with the formats JPG, PNG or GIF will automatically be transformed into a preview within the note. When inserting a link to a YouTube, Vimeo or Microsoft Stream video, the video will be embed into the note. You can also notify your colleagues using @mentions.
 
 ## 2.1.1 The Editor
 
