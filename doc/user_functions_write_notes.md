@@ -2,7 +2,7 @@
 title: 2.1 Write Notes
 tags: [functions]
 keywords: functions, editor, notes, move, like, attachments, mentions
-last_updated: December 11, 2018
+last_updated: December 16, 2018
 ---
 
 Using Communote you can quickly and easily write notes, messages or protocols. You are thereby not - unlike other microblogging services - limited to a number of letters. You can apply formatting to the content and attach any kind of data to it. Pictures with the formats JPG, PNG or GIF will automatically be transformed into a preview within the note. When inserting a link to a YouTube, Vimeo or Microsoft Stream video, the video will be embed into the note. You can also notify your colleagues using @mentions.
@@ -57,7 +57,7 @@ You can find out the username of the user by hovering the profile picture with t
 
 ![](images/editor_users.png)
 
-_Figure "Notification in the editor": via @-Sign or with the option "People"_
+_Figure "Notification in the editor": via @-sign or with the option "People"_
 
 ![](images/hovercard_user.png)
 
@@ -122,7 +122,12 @@ _Figure "Create a quick answer"_
 
 ## 2.1.3 Edit notes
 
-If you have made a mistake or if you have missed some important information, you can edit the notes after you have sent them (Figure "Edit notes"). In order to edit, you pass over the note and then choose the action "edit" which you will find under the option "more". The editor will now load automatically and you can edit the note. When you are finished, you can click "save" or use CTRL + Enter.
+If you have made a mistake or missed some important information, you can edit your notes after you have sent them (Figure "Edit notes"). For this select the "Edit" action which can be found in the "More" menu. The editor will open and you can edit the note. When you are done, click "save" or use CTRL + Enter to submit your changes.
+
+If the note you are editing has mentions, you can decide if you want to notify the mentioned users again. Your decision will be remembered by the browser. To not notify again untick the checkbox "Resend Notification". Now, only newly added mentions will be informed about the modification of the note. This is also true for the @@ mentions. But let's take a closer look at them. These kinds of mentions represent dynamic sets of users and it is not tracked in detail which users have already been notified when the note was created or edited the last time. So if you are for example modifying a note with an @@all and have the resend option disabled, notifications will work like this:
+* the @@all is not evaluated again and the users with read access will not be notified. This is also true for users who didn't have access to the topic when the note was created but are now allowed to read it. These users weren't notified during creation and won't be notified now about the edit operation.
+* if you add an additional @-user mention, the user will be notified even if he has already been informed about the note during creation because of the @@all.
+* if you add an @@authors, all authors of the topic with read access will be informed even if they have already received a notification triggered by the @@all when the note was created. The other @@ mentions are handled analogously.
 
 ![](images/note_edit.png)
 
