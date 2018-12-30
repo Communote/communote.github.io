@@ -399,6 +399,7 @@ com.communote.server.core.user.helper
 com.communote.server.core.user.listener
 com.communote.server.core.user.listeners
 com.communote.server.core.user.note
+com.communote.server.core.user.security
 com.communote.server.core.user.validation
 com.communote.server.core.util
 com.communote.server.core.virusscan

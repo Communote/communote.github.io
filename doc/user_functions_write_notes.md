@@ -2,14 +2,14 @@
 title: 2.1 Write Notes
 tags: [functions]
 keywords: functions, editor, notes, move, like, attachments, mentions
-last_updated: March 10, 2016
+last_updated: December 16, 2018
 ---
 
-Using Communote you can quickly and easily write notes, messages or protocols. You are thereby not - unlike other microblogging services - limited to a number of letters. You can add easy formats to your note and attach any kind of data to it. Pictures with the formats JPG, PNG or GIF will automatically be transformed into a preview within the note. It is possible to attach a video-link from YouTube or Vimeo, witch will be embed into Communote. You can also notify your colleagues using @mentions.
+Using Communote you can quickly and easily write notes, messages or protocols. You are thereby not - unlike other microblogging services - limited to a number of letters. You can apply formatting to the content and attach any kind of data to it. Pictures with the formats JPG, PNG or GIF will automatically be transformed into a preview within the note. When inserting a link to a YouTube, Vimeo or Microsoft Stream video, the video will be embed into the note. You can also notify your colleagues using @mentions.
 
 ## 2.1.1 The Editor
 
-If you want to write a new note, you will always find a small editor field above the list of notes. When you click in that field, it will change into the note editor that we have already shown you in Chapter 2. Now you can start writing right away. You can add easy formatting options like **bold**, _italic_ or <u>underlined</u> to your message.
+If you want to write a new note, you will always find a small editor field above the list of notes. When you click in that field, it will change into the note editor that we have already shown you in Chapter 2. Now you can start writing right away. You can add easy formatting options like **bold**, _italic_ or underlined to your message.
 
 The editor has further options for your message ("Topic", "People", "Tags" and "Attachments") that will help you add additional information and content to your note. Those options are not mandatory and can be used on demand. If you choose one of those options, a new input field will appear in which you can add the information.
 
@@ -39,9 +39,9 @@ _Figure "Using tags in the editor"_
 
 ### 2.1.1.3 Attachments
 
-Communote offers the possibility of adding attachments to the note and sharing them with other users. The standard configuration limits the data size to 10 MB. Please contact your Administrator, if you would like to know the exact size limit of the attachments.
+Communote offers the possibility of adding attachments to a note and sharing them with other users. The default configuration limits the size of an attachment to 10 MB. Please contact your Communote administrator if you want to find out how this limit is currently configured.
 
-You can add an attachment to your note by choosing the option "attachments" below the editor. You can now choose a file from your computer and add it to your note. Before sending in your note, you can re-check the attachment and erase it if that's necessary.
+You can add an attachment to your note by clicking the option "Attachments" below the editor. You can now choose files from your computer and add them to your note. Alternatively, attachments can also be added via drag and drop. Moreover, if there is image data in your clipboard, for instance after taking a screenshot, you can directly paste the data into the editor and an image containing the data will be attached to the note. Before publishing your note, you can re-check the attachments and remove any you don't want to send along.
 
 ![](images/editor_attachments.png)
 
@@ -57,7 +57,7 @@ You can find out the username of the user by hovering the profile picture with t
 
 ![](images/editor_users.png)
 
-_Figure "Notification in the editor": via @-Sign or with the option "People"_
+_Figure "Notification in the editor": via @-sign or with the option "People"_
 
 ![](images/hovercard_user.png)
 
@@ -102,7 +102,7 @@ _Figure "Emoticon Cheat sheet"_
 
 As you are writing or editing a note, Communote automatically saves what is typed into the editor. You will then see a sign "Saved" with a date below the editor. If you need to take a break or your work has been interrupted, the last save will automatically be loaded into the editor as you open it again. You will then be able to see the message "Backup has been loaded" below the editor. You can also click "cancel" if you don't need the autosave anymore.
 
-**Note:** Communote only saved one autosave per note. If you start a new note in another browser, the former backup will be overwritten.
+**Note:** Communote only saves one autosave per note. If you start a new note in another browser, the former backup will be overwritten.
 
 ![](images/editor_autosave.png)
 
@@ -122,7 +122,12 @@ _Figure "Create a quick answer"_
 
 ## 2.1.3 Edit notes
 
-If you have made a mistake or if you have missed some important information, you can edit the notes after you have sent them (Figure "Edit notes"). In order to edit, you pass over the note and then choose the action "edit" which you will find under the option "more". The editor will now load automatically and you can edit the note. When you are finished, you can click "save" or use CTRL + Enter.
+If you have made a mistake or missed some important information, you can edit your notes after you have sent them (Figure "Edit notes"). For this select the "Edit" action which can be found in the "More" menu. The editor will open and you can edit the note. When you are done, click "save" or use CTRL + Enter to submit your changes.
+
+If the note you are editing has mentions, you can decide if you want to notify the mentioned users again. Your decision will be remembered by the browser. To not notify again untick the checkbox "Resend Notification". Now, only newly added mentions will be informed about the modification of the note. This is also true for the @@ mentions. But let's take a closer look at them. These kinds of mentions represent dynamic sets of users and it is not tracked in detail which users have already been notified when the note was created or edited the last time. So if you are for example modifying a note with an @@all and have the resend option disabled, notifications will work like this:
+* the @@all is not evaluated again and the users with read access will not be notified. This is also true for users who didn't have access to the topic when the note was created but are now allowed to read it. These users weren't notified during creation and won't be notified now about the edit operation.
+* if you add an additional @-user mention, the user will be notified even if he has already been informed about the note during creation because of the @@all.
+* if you add an @@authors, all authors of the topic with read access will be informed even if they have already received a notification triggered by the @@all when the note was created. The other @@ mentions are handled analogously.
 
 ![](images/note_edit.png)
 
@@ -189,7 +194,7 @@ Important: Don't change the address or the subject headline of the email!
 
 Direct messages are private messages between two or more users. They are only visible to the author and the addressee(s) and can be written as a response to another note or as a new note, but it has to be marked as a direct message within the note and it must be addressed to one or more specific users.
 
-Again there are two options for marking a note as a direct message. You can either mark it directly in the message by starting the note with a d (for direct message) followed by a space and then followed by the mentioning of the addressee (@user). If you are addressing more than one user, they must be separated by an empty space (Figure "Direct Messages"). The other way is again in the options: Below the input field of the users that you would like to notify is a field "send as direct note". If you check that field, your message will be send as direct note.
+There are two options for marking a note as a direct message. You can either mark it directly in the message by starting the note with a d (for direct message) followed by a space and then followed by the mentioning of the addressee (@user). If you are addressing more than one user, they must be separated by an empty space (Figure "Direct Messages"). The other way is again in the options: Below the input field of the users that you would like to notify is a field "send as direct note". If you check that field, your message will be send as direct note.
 
 ![](images/editor_dm.png)
 

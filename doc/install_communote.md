@@ -2,7 +2,7 @@
 title: 2 Installation
 tags: [getting_started]
 keywords: installation, deployment, configuration
-last_updated: March 10, 2016
+last_updated: December 9, 2018
 ---
 
 ## 2.1 Types of installation
@@ -121,7 +121,7 @@ Before Communote can be installed your server has to be prepared:
    ```
 
 2. Download a JDBC driver for your database management system. The installation of the driver, which is a JAR file, will be described in the individual installation sections.
-   * PostgreSQL: the JDBC driver is available at [https://jdbc.postgresql.org/download.html](https://jdbc.postgresql.org/download.html). You should typically pick the current JDBC42 driver but please also read the documentation on that page.
+   * PostgreSQL: the JDBC driver is available at [https://jdbc.postgresql.org/download.html](https://jdbc.postgresql.org/download.html). You should typically pick the current JDBC 4.2 driver but please also read the documentation on that page.
      * _Note: if you are using the Linux or Windows installation package this step can be skipped because the driver is already contained_
    * MySQL: the JDBC driver can be downloaded from [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/). You need a driver with version 5.1.x (e.g. 5.1.39).
    * Microsoft SQL-Server: the JDBC driver is available at [http://jtds.sourceforge.net/](http://jtds.sourceforge.net/).
