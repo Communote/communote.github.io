@@ -53,5 +53,5 @@ defaults:
       search: true
       tooltip: true
 
-gems:
+plugins:
   - jekyll-redirect-from
