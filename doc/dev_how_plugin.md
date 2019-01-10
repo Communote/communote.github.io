@@ -2,7 +2,7 @@
 title: 2.1 Write a plugin
 tags: [development]
 keywords: plugin, note manipulation, maven, extension points, tags, attachments, preferences, repost, notification, rendering
-last_updated: August 16, 2016
+last_updated: January 10, 2019
 ---
 Because of an embedded OSGi container (Apache Felix) and a growing set of extension points Communote can be customized easily with the help of OSGi bundles, or how we call them: plugins. With these plugins, which can be added and removed at runtime, it is for instance possible to:
 
@@ -25,7 +25,7 @@ The easiest way to create a new plugin is to use Maven's [Archetype](http://mave
 3. Call the following command (change the values for groupId, artifactId, version and communoteVersion to your needs):
 
    ```shell
-   mvn archetype:generate -DarchetypeGroupId=com.communote.plugins -DarchetypeArtifactId=communote-plugin-archetype -DarchetypeVersion=1.1 -DgroupId=yourGroupId -DartifactId=yourPluginsArtifactId -Dversion=1.0-SNAPSHOT -DcommunoteVersion=3.4
+   mvn archetype:generate -DarchetypeGroupId=com.communote.plugins -DarchetypeArtifactId=communote-plugin-archetype -DarchetypeVersion=1.1 -DgroupId=yourGroupId -DartifactId=yourPluginsArtifactId -Dversion=1.0-SNAPSHOT -DcommunoteVersion=3.5
    ```
 
    where the parameters have the following meaning.
