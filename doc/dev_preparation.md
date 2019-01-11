@@ -2,7 +2,7 @@
 title: 1 Preparation
 tags: [development]
 keywords: core, plugin, setup, java, maven
-last_updated: August 16, 2016
+last_updated: January 10, 2019
 ---
 The [Communote core](https://github.com/Communote/communote-server) is a Java servlet based web application which can be extended with plugins (OSGi bundles).
 This page describes what you need to do to setup your development environment to build the Communote core and Communote plugins.
@@ -25,7 +25,7 @@ This should print the version of the installed Maven and the version of Java Mav
 
 ## 1.2 Configure Maven
 
-For building plugins against a specific Communote release (without compiling the core of that version) you have to add the Communote Maven repository to your [settings.xml](https://maven.apache.org/settings.html):
+For building plugins against a specific Communote release (without compiling the core of that version) or creating a plugin skeleton with the Communote Maven Archetype you have to add the Communote Maven repository to your [settings.xml](https://maven.apache.org/settings.html):
 
 ```xml
 <repository>
