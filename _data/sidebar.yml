@@ -187,23 +187,35 @@ entries:
         audience: developers
         version: all
         output: web, pdf
-    - title: 3 Technical Overview
+    - title: 3 Ease Development
+      unlinked: true
+      url: /doc/dev_ease.html
+      audience: developers
+      version: all
+      output: web, pdf
+      thirdlevel:
+      - title: 3.1 Mail in Development Environment
+        url: /doc/dev_ease_mail.html
+        audience: developers
+        version: all
+        output: web, pdf
+    - title: 4 Technical Overview
       url: /doc/dev_technical.html
       audience: developers
       version: all
       output: web, pdf
       thirdlevel:
-    - title: 4 Javadoc
+    - title: 5 Javadoc
       url: /doc/dev_java_doc.html
       audience: developers
       version: all
       output: web, pdf
-    - title: 5 REST API
+    - title: 6 REST API
       url: /doc/dev_rest_api.html
       audience: developers
       version: all
       output: web, pdf
-    - title: 6 Design Guidelines
+    - title: 7 Design Guidelines
       url: /doc/dev_design.html
       audience: developers
       version: all

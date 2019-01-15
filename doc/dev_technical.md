@@ -1,8 +1,8 @@
 ---
-title: 3 Technical Overview
+title: 4 Technical Overview
 tags: [development]
 keywords: layout, components, technical overview, framework, backend, frontend, plugins, terms, concepts
-last_updated: August 16, 2016
+last_updated: January 12, 2019
 ---
 
 ## 3.1 Components and Frameworks
