@@ -1,8 +1,8 @@
 ---
-title: 5 REST-API
+title: 6 REST-API
 tags: [development]
 keywords: rest, api
-last_updated: August 16, 2016
+last_updated: January 12, 2019
 ---
 
 You can browse through the documentation of the latest REST API version by following this link:
