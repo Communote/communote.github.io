@@ -9,13 +9,13 @@ This page describes what you need to do to setup your development environment to
 
 ## 1.1 Setup Java and Maven
 
-For building Oracle's JDK 8 and a current version of Maven 3 needs to be installed. To test whether the correct JDK is already available you can open a command prompt and run the following command which should output the installed version.
+For building OpenJDK 8 (tested with AdoptOpenJDK) or Oracle's JDK 8 and a current version of Maven 3 needs to be installed. To test whether the correct JDK is already available you can open a command prompt and run the following command which should output the installed version.
 
 ```shell
 javac -version
 ```
 
-If you don't have the JDK you can get it from [Oracle's download page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). In a similar fashion you can check if Maven is already setup correctly:
+If you don't have the JDK you can get OpenJDK 8 from any provider like AdoptOpenJDK or if you prefer Oracle's version got to [Oracle's download page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). In a similar fashion you can check if Maven is already setup correctly:
 
 ```shell
 mvn --version
