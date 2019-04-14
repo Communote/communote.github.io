@@ -2,13 +2,14 @@
 title: 1 System requirements
 tags: [installation]
 keywords: installation, system requirements, java, apache tomcat, windows or linux, database
-last_updated: December 9, 2018
+last_updated: April 14, 2019
 ---
 
 **Communote has the following software requirements:**
 
 * 32-bit or 64-bit Linux or Windows system
-* Oracle's Java 8 runtime environment
+* Oracle's Java 8 runtime environment or OpenJDK 8 (tested with AdoptOpenJDK)
+  * note on OpenJDK: you actually only need the Java runtime environment (JRE) for running Communote, but some providers and Linux distibutions only provide the full Java development kit (JDK). Since JDK includes the JRE, taking the full package is OK.
 * a database management system. Supported are
   * PostgreSQL 9.5 or 9.6
   * MySQL 5.6
