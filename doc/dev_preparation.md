@@ -15,7 +15,7 @@ For building OpenJDK 8 (tested with AdoptOpenJDK) or Oracle's JDK 8 and a curren
 javac -version
 ```
 
-If you don't have the JDK you can get OpenJDK 8 from any provider like AdoptOpenJDK or if you prefer Oracle's version got to [Oracle's download page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). In a similar fashion you can check if Maven is already setup correctly:
+If you don't have the JDK you can get OpenJDK 8 from any provider like AdoptOpenJDK or if you prefer Oracle's version go to [Oracle's download page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). In a similar fashion you can check if Maven is already setup correctly:
 
 ```shell
 mvn --version
